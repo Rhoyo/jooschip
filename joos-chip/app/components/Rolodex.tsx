@@ -65,15 +65,15 @@ export default function Rolodex() {
                 damping: 15
               }}
             >
-              <h1 className="text-white text-3xl font-semibold">{card.title}</h1>
-              <p className="text-neutral-400 text-lg">{card.message}</p>
               <img
                 src={card.image}
                 alt={card.title}
                 width={360}
                 height={520}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover -z-10 opacity-40"
               />
+              <h1 className="text-white text-3xl font-semibold relative z-10">{card.title}</h1>
+              <p className="text-neutral-400 text-lg relative z-10">{card.message}</p>
             </motion.div>
           );
         })}
