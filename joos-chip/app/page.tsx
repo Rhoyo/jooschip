@@ -18,7 +18,7 @@ export default function Home() {
           passwordAttempt == password ?
           <Rolodex/> 
           :
-          <PasswordScreen backgroundImage="/random_turtle.jpg" onPasswordChange={setPasswordAttempt}/>
+          <PasswordScreen backgroundImage="/background.png" onPasswordChange={setPasswordAttempt}/>
         }
       </main>
     </div>
