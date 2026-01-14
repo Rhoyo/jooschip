@@ -3,12 +3,12 @@
 import Rolodex from "./components/Rolodex";
 import PasswordScreen from "./components/PasswordModal";
 import { useState } from "react";
-import { env } from "process";
+
 
 export default function Home() {
 
   const [passwordAttempt, setPasswordAttempt] = useState("");
-  const password = env.PASSWORD;
+  const password = "011924";
 
   return (
     <div className="">

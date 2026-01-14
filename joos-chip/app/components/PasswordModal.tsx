@@ -8,25 +8,22 @@ interface PasswordScreenProps {
 
 const PasswordScreen: React.FC<PasswordScreenProps> = ({ backgroundImage, onPasswordChange }) => {
   const [password, setPassword] = useState("");
-  const [filledBlocks, setFilledBlocks] = useState<number[]>([]);
+  const [isShaking, setIsShaking] = useState(false);
   const passwordInputRef = useRef<HTMLInputElement>(null);
 
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputPassword = event.target.value;
     setPassword(inputPassword);
 
-    const filledBlocks = inputPassword.split("").map((char, index) => index + 1);
-    setFilledBlocks(filledBlocks);
-
-    onPasswordChange(inputPassword);
-  };
-
-  const handleClick = (index: number) => {
-    const passwordValue = password.slice(0, index) + "*" + password.slice(index + 1);
-    setPassword(passwordValue);
-    const filledBlocks = Array.from({ length: index + 1 }, (_, i) => i + 1);
-    setFilledBlocks(filledBlocks);
-    passwordInputRef.current?.focus();
+    if (inputPassword.length > 6) {
+      setIsShaking(true);
+      setTimeout(() => {
+        setPassword("");
+        setIsShaking(false);
+      }, 500);
+    } else {
+      onPasswordChange(inputPassword);
+    }
   };
 
   const handleBlur = () => {
@@ -49,7 +46,7 @@ const PasswordScreen: React.FC<PasswordScreenProps> = ({ backgroundImage, onPass
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-black">
+    <div className="flex flex-col items-center justify-center h-screen w-screen bg-black">
       <img
         src={backgroundImage}
         alt="Background Image"
@@ -57,27 +54,14 @@ const PasswordScreen: React.FC<PasswordScreenProps> = ({ backgroundImage, onPass
       />
       <div className="relative">
         <input
-          type="password"
           value={password}
           onChange={handlePasswordChange}
-          className="rounded px-4 py-2 w-64"
+          className={`rounded px-4 py-2 w-64 text-white text-center text-3xl font-bold ${isShaking ? "shake" : ""}`}
           id="passwordInput"
           ref={passwordInputRef}
           onBlur={handleBlur}
+          style={{ textOverflow: "ellipsis" }}
         />
-        <div className="grid grid-cols-6 gap-2 justify-self-center flex w-full h-full">
-          {Array.from({ length: 6 }).map((_, index) => (
-            <Box
-              key={index}
-              className={`block w-8 h-8 border border-gray-300 rounded ${
-                filledBlocks.includes(index + 1)
-                  ? "bg-gray-500"
-                  : "bg-transparent"
-              }`}
-              onClick={() => handleClick(index)}
-            />
-          ))}
-        </div>
       </div>
     </div>
   );
