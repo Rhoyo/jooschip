@@ -6,7 +6,7 @@ interface Card {
   }
   
   const cards: Card[] = [
-    { id: 1, title: "January 2024", message: "Memory in Blue", image: "/images/Random_Turtle.jpg" },
+    { id: 1, title: "January 2024", message: "Memory in Blue", image: "/Random_Turtle.jpg" },
     { id: 2, title: "February 2024", message: "A Whisper Left Behind", image: "/images/card2.jpg" },
     { id: 3, title: "March 2024", message: "Soft as a Tide", image: "/images/card3.jpg" },
     { id: 4, title: "April 2024", message: "The Clock’s Hands", image: "/images/card4.jpg" },
