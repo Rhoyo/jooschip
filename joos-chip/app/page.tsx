@@ -1,12 +1,25 @@
-import Image from "next/image";
+"use client";
+
 import Rolodex from "./components/Rolodex";
-import ParallaxHero from "./components/ParallaxHero";
+import PasswordScreen from "./components/PasswordModal";
+import { useState } from "react";
+import { env } from "process";
 
 export default function Home() {
+
+  const [passwordAttempt, setPasswordAttempt] = useState("");
+  const password = env.PASSWORD;
+
   return (
     <div className="">
       <main className="">
-        <Rolodex/>
+
+        {
+          passwordAttempt == password ?
+          <Rolodex/> 
+          :
+          <PasswordScreen backgroundImage="/random_turtle.jpg" onPasswordChange={setPasswordAttempt}/>
+        }
       </main>
     </div>
   );

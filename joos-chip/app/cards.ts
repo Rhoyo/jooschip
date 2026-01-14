@@ -22,15 +22,15 @@ interface Card {
     { id: 14, title: "February 2025", message: "Personal Message 8", image: "/images/card14.jpg" },
     { id: 15, title: "March 2025", message: "Personal Message 9", image: "/images/card15.jpg" },
     { id: 16, title: "April 2025", message: "Personal Message 10", image: "/images/card16.jpg" },
-    25→    { id: 17, title: "May 2025", message: "Personal Message 11", image: "/images/card17.jpg" },
-    26→    { id: 18, title: "June 2025", message: "Personal Message 12", image: "/images/card18.jpg" },
-    27→    { id: 19, title: "July 2025", message: "Personal Message 13", image: "/images/card19.jpg" },
-    28→    { id: 20, title: "August 2025", message: "Personal Message 14", image: "/images/card20.jpg" },
-    29→    { id: 21, title: "September 2025", message: "Personal Message 15", image: "/images/card21.jpg" },
-    30→    { id: 22, title: "October 2025", message: "Personal Message 16", image: "/images/card22.jpg" },
-    31→    { id: 23, title: "November 2025", message: "Personal Message 17", image: "/images/card23.jpg" },
-    32→    { id: 24, title: "December 2025", message: "Personal Message 18", image: "/images/card24.jpg" },
-    33→    { id: 25, title: "January 2026", message: "Personal Message 19", image: "/images/card25.png" }
+    { id: 17, title: "May 2025", message: "Personal Message 11", image: "/images/card17.jpg" },
+    { id: 18, title: "June 2025", message: "Personal Message 12", image: "/images/card18.jpg" },
+    { id: 19, title: "July 2025", message: "Personal Message 13", image: "/images/card19.jpg" },
+    { id: 20, title: "August 2025", message: "Personal Message 14", image: "/images/card20.jpg" },
+    { id: 21, title: "September 2025", message: "Personal Message 15", image: "/images/card21.jpg" },
+    { id: 22, title: "October 2025", message: "Personal Message 16", image: "/images/card22.jpg" },
+    {id: 23, title: "November 2025", message: "Personal Message 17", image: "/images/card23.jpg" },
+    { id: 24, title: "December 2025", message: "Personal Message 18", image: "/images/card24.jpg" },
+    { id: 25, title: "January 2026", message: "Personal Message 19", image: "/images/card25.png" }
   ];
   
   export default cards;
