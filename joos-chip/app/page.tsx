@@ -8,8 +8,7 @@ import { useState } from "react";
 export default function Home() {
 
   const [passwordAttempt, setPasswordAttempt] = useState("");
-  const password = process.env.NODE_ENV === "production" ? process.env.PASSWORD : process.env.NEXT_PUBLIC_PASSWORD;
-  console.log("ENV", process.env);
+  const password = process.env.NEXT_PUBLIC_PASSWORD;
 
   return (
     <div className="">
