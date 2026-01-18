@@ -1,6 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Box } from "@mui/material";
-
 interface PasswordScreenProps {
   backgroundImage: string;
   onPasswordChange: (password: string) => void;
